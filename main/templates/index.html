@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fusion Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/jpeg" href="{% static 'favicon.jpg' %}"/>
+    <style>
+      #map {
+        height: 60%;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script>
+      var csrftoken = '{{csrf_token}}';
+      var fusion_table_id = '{{GOOGLE_FUSIONTABLE_ID}}';
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'app.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{GOOGLE_API_KEY}}&callback=initMap" async defer></script>
+
+  </head>
+<body>
+
+<div id="map"></div>
+<a href="#" onclick="removeAll()">Remove all</a>
+<h1>Picked locations:</h1>
+<div>
+    <ul id="locations">
+        {% for address in existing_addresses %}
+        <li>{{address}}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+</body>
+</html>

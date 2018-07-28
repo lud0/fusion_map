@@ -119,5 +119,3 @@ STATIC_URL = '/static/'
 GOOGLE_CREDENTIALS_FILE = 'credentials.json'
 GOOGLE_API_KEY = os.environ.get('GOOGLE_API_KEY', None)
 GOOGLE_FUSIONTABLE_ID = os.environ.get('GOOGLE_FUSIONTABLE_ID', None)
-print(GOOGLE_API_KEY)
-print(GOOGLE_FUSIONTABLE_ID)

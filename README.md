@@ -11,7 +11,7 @@ Everything can be reset clicking on a "Remove All" link.
 
 ## Tech Stack
 
-- Django 2
+- Django 2 / Python 3
 - Javascript/jQuery
 - Google Maps API: Map, Geocoder, FusionTablesLayer
 
@@ -29,7 +29,7 @@ under the `client_email` key in the `credentials.json` file.
 4. edit the `secrets.env` file and set the **GOOGLE_API_KEY** and **GOOGLE_FUSIONTABLE_ID**
 5. prepare the env and run the server:
 ```
-virtualenv .ve
+virtualenv .ve -p python3
 source .ve/bin/activate && source secrets.env
 pip install -r requirements.txt
 ./manage.py migrate
